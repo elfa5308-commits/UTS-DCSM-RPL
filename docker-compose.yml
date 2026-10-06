@@ -1,0 +1,25 @@
+services:
+  server:
+    build: .
+    container_name: dcsm-rpl-server
+    command: python -m server.server
+    ports:
+      - "50051:50051"
+    volumes:
+      - ./storage:/app/storage
+      - ./logs:/app/logs
+      - ./certificates:/app/certificates:ro
+    restart: unless-stopped
+
+  client:
+    build: .
+    container_name: dcsm-rpl-client
+    command: python -m client.client
+    environment:
+      DCSM_SERVER_TARGET: server:50051
+    depends_on:
+      - server
+    volumes:
+      - ./certificates:/app/certificates:ro
+    stdin_open: true
+    tty: true

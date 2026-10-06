@@ -1,0 +1,39 @@
+
+file_storage.protosecurefilestorage"2
+LoginRequest
+username (	
+password (	"@
+LoginResponse
+success (
+token (	
+message (	"Q
+UploadRequest
+filename (	
+label (	
+content (
+sha256 (	"#
+DownloadRequest
+filename (	"
+ListRequest"!
+DeleteRequest
+filename (	"I
+FileInfo
+filename (	
+label (	
+sha256 (	
+size ("r
+FileResponse
+success (
+message (	
+filename (	
+label (	
+sha256 (	
+content (":
+ListResponse*
+files (2.securefilestorage.FileInfo2ç
+FileStorageJ
+Login.securefilestorage.LoginRequest .securefilestorage.LoginResponseK
+Upload .securefilestorage.UploadRequest.securefilestorage.FileResponseO
+Download".securefilestorage.DownloadRequest.securefilestorage.FileResponseG
+List.securefilestorage.ListRequest.securefilestorage.ListResponseK
+Delete .securefilestorage.DeleteRequest.securefilestorage.FileResponsebproto3

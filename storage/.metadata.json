@@ -1,0 +1,18 @@
+{
+  "rbac_public.txt": {
+    "label": "PUBLIC",
+    "sha256": "c27d72cb7a9f2179a9c1ed411b36c49c32baa549c66504ad33092e83ee17c813"
+  },
+  "rbac_secret.txt": {
+    "label": "SECRET",
+    "sha256": "1223873bdaa3ae0e28bf83aad83495f83167b2c0c045255ede6b6c69196f8f4d"
+  },
+  "sha_tamper.txt": {
+    "label": "SECRET",
+    "sha256": "396a7ce7768e67efbe04299af707c1420db29aba0f3c8c97cc92a82abac26387"
+  },
+  "sha_valid.txt": {
+    "label": "SECRET",
+    "sha256": "17ab6605b81b34b6a499a23de79fcaf6d1d8849e8a9b5522e0c6ba9a98bc1cd0"
+  }
+}

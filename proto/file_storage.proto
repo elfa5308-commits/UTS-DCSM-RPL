@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package securefilestorage;
+
+service FileStorage {
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc Upload(UploadRequest) returns (FileResponse);
+  rpc Download(DownloadRequest) returns (FileResponse);
+  rpc List(ListRequest) returns (ListResponse);
+  rpc Delete(DeleteRequest) returns (FileResponse);
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  bool success = 1;
+  string token = 2;
+  string message = 3;
+}
+
+message UploadRequest {
+  string filename = 1;
+  string label = 2;
+  bytes content = 3;
+  string sha256 = 4;
+}
+
+message DownloadRequest {
+  string filename = 1;
+}
+
+message ListRequest {}
+
+message DeleteRequest {
+  string filename = 1;
+}
+
+message FileInfo {
+  string filename = 1;
+  string label = 2;
+  string sha256 = 3;
+  int64 size = 4;
+}
+
+message FileResponse {
+  bool success = 1;
+  string message = 2;
+  string filename = 3;
+  string label = 4;
+  string sha256 = 5;
+  bytes content = 6;
+}
+
+message ListResponse {
+  repeated FileInfo files = 1;
+}
